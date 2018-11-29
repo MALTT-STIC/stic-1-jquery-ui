@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr"
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery UI Exemple : datepicker</title>
+    <!-- Le fichier CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/jquery-ui/jquery-ui.min.css"
+    />
+  </head>
+
+  <body>
+    <h1>jQuery UI - datepicker simple</h1>
+    <p>
+      Voici un premier exemple : un champ de texte qui propose automatiquement
+      un calendrier superposé pour choisir une date. Cliquez à l'intérieur du
+      champ de texte pour faire apparaître le widget.
+    </p>
+
+    <p>Date <input type="text" id="mon-champ-date" /></p>
+    <p>
+      Pour obtenir ce type de résultat il suffit de donner un ID au champ de
+      texte, dans notre cas &quot;mon-champ-date&quot;, et ensuite ajouter le
+      code JavaScript suivant.
+    </p>
+    <pre>&lt;script&gt;<br>$(&quot;#mon-champ-date&quot;).datepicker();<br>&lt;/script&gt;
+</pre>
+    <hr />
+    <p>
+      <a href="https://tecfa.unige.ch/perso/mafritz/">MAF</a>
+      (29.11.2018)
+    </p>
+    <!-- Les fichiers JavaScript dans l'ordre suivant -->
+    <script src="../assets/vendor/jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+      $("#mon-champ-date").datepicker();
+    </script>
+  </body>
+</html>

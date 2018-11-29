@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery Ui Exemple : élément &quot;draggable&quot;</title>
+    <!-- Le fichier CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/jquery-ui/jquery-ui.min.css"
+    />
+    <style>
+      #redBox {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #999;
+        background-color: #ff0000;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 200px;
+      }
+
+      #bluBox {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #999;
+        background-color: #0a00ff;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 200px;
+      }
+
+      #blackBox {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #999;
+        background-color: #000;
+        margin-top: 50px;
+        margin-left: 400px;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>jQuery UI - droppable avec options</h1>
+    <p>
+      Voici un exemple d'élément &quot;droppable&quot; qui présente quelques
+      options pour rendre l'interaction plus intéressante. Le carré rouge ne
+      sera pas accepté par l'élément cible et va retourner à sa place.
+    </p>
+    <div id="redBox">Drag me!</div>
+    <p>
+      Le carré bleu, au contraire, sera accepté s'il sera trainé complètement à
+      l'intérieur de l'élément cible.
+    </p>
+    <div id="bluBox">Drag me!</div>
+    <div id="blackBox">Drop inside this area!</div>
+    <p>Voici le code utilisé pour cet exemple :</p>
+    <pre>&lt;script&gt;<br>$(&quot;#redBox&quot;).draggable({<br>	revert: 'invalid'<br>});<br>$(&quot;#bluBox&quot;).draggable({<br>	revert: 'invalid'<br>});<br>$(&quot;#blackBox&quot;).droppable({<br>	accept: '#bluBox',<br>	tolerance: 'fit'<br>});<br>&lt;/script&gt;</pre>
+    <hr />
+    <p><a href="https://tecfa.unige.ch/perso/mafritz/">MAF</a> (29.11.2018)</p>
+    <!-- Les fichiers JavaScript dans l'ordre suivant -->
+    <script src="../assets/vendor/jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+      $("#redBox").draggable({
+        revert: "invalid"
+      });
+      $("#bluBox").draggable({
+        revert: "invalid"
+      });
+      $("#blackBox").droppable({
+        accept: "#bluBox",
+        tolerance: "fit"
+      });
+    </script>
+  </body>
+</html>

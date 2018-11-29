@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery Ui Exemple : élément &quot;draggable&quot;</title>
+    <!-- Le fichier CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/jquery-ui/jquery-ui.min.css"
+    />
+    <style>
+      #redBox {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #999;
+        background-color: #ff0000;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>jQuery UI - élément &quot;draggable&quot;</h1>
+    <p>
+      Voici un simple interaction qui permet de traîner un élément avec la
+      souris. Cliquer sur le carré rouge et trainé-le en laissant appuyé le
+      bouton de la souris. Comme vous pouvez le voir, le carré rouge peut être
+      trainé n'importe où dans la page.
+    </p>
+    <div id="redBox">Drag me!</div>
+    <p>Voici le code utilisé pour cet exemple :</p>
+    <pre>
+&lt;script&gt;
+$(&quot;#redBox&quot;).draggable();
+&lt;/script&gt; </pre
+    >
+    <hr />
+    <p><a href="https://tecfa.unige.ch/perso/mafritz/">MAF</a> (29.11.2018)</p>
+    <!-- Les fichiers JavaScript dans l'ordre suivant -->
+    <script src="../assets/vendor/jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+      $("#redBox").draggable();
+    </script>
+  </body>
+</html>

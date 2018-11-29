@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery Ui Exemple : drag&amp;drop avec code</title>
+    <!-- Le fichier CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/jquery-ui/jquery-ui.min.css"
+    />
+    <style>
+      #redBox {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #999;
+        background-color: #ff0000;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 200px;
+      }
+
+      #bluBox {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #999;
+        background-color: #0a00ff;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 200px;
+      }
+
+      #blackBox {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #999;
+        background-color: #000;
+        margin-top: 50px;
+        margin-left: 400px;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>jQuery UI - droppable avec code supplémentaire</h1>
+    <p>
+      Dans cet exemple, on utilisera l'argument ui qui peut être passé dans une
+      fonction à l'intérieur d'un élément de jQuery UI. De cette manière, nous
+      avons accès facilement aux objets de l'interface qui utilisent des
+      éléments de jQuery UI.
+    </p>
+    <div id="redBox">Drag me!</div>
+    <p>
+      Le carré bleu, au contraire, sera accepté s'il sera trainé complètement à
+      l'intérieur de l'élément cible.
+    </p>
+    <div id="bluBox">Drag me!</div>
+    <div id="blackBox">Drop inside this area!</div>
+    <p>Voici le code utilisé pour cet exemple :</p>
+    <pre>
+$("#redBox").draggable();
+$("#bluBox").draggable();
+$("#blackBox").droppable({
+	tolerance: 'fit',
+	drop: function(event, ui) {
+		if(ui.draggable.attr("id") == "redBox") {
+			ui.draggable.draggable("option", "revert", true); //renvoyer l'élément à l'origine
+			ui.draggable.text("No way!");
+		} else {
+			ui.draggable.text("Yes sir!");	
+		}
+	}
+});</pre
+    >
+    <hr />
+    <p><a href="https://tecfa.unige.ch/perso/mafritz/">MAF</a> (29.11.2018)</p>
+    <!-- Les fichiers JavaScript dans l'ordre suivant -->
+    <script src="../assets/vendor/jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+      $("#redBox").draggable();
+      $("#bluBox").draggable();
+      $("#blackBox").droppable({
+        tolerance: "fit",
+        drop: function(event, ui) {
+          if (ui.draggable.attr("id") == "redBox") {
+            ui.draggable.draggable("option", "revert", true); //renvoyer l'élément à l'origine
+            ui.draggable.text("No way!");
+          } else {
+            ui.draggable.text("Yes sir!");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

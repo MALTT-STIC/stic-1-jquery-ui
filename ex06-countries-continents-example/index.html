@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>
+      jQuery Ui Exemple : application drag and drop sans code supplémentaire
+    </title>
+    <!-- Le fichier CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/jquery-ui/jquery-ui.min.css"
+    />
+    <style>
+      .item {
+        float: left;
+        width: 150px;
+        border: 1px solid #999;
+        background-color: #f9f6d0;
+        padding: 10px 15px;
+        font-weight: bold;
+        font-size: 16px;
+        margin-right: 20px;
+        margin-bottom: 50px;
+      }
+
+      .clear {
+        clear: both;
+        overflow: hidden;
+      }
+
+      .container {
+        float: left;
+        width: 200px;
+        height: 250px;
+        border: 1px solid #999;
+        background-color: #def8fc;
+        padding: 10px 15px;
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>jQuery UI - application drag and drop sans code supplémentaire</h1>
+    <p>
+      Ce petit jeu concernant la géographie est développé exclusivement à l'aide
+      des méthodes, options et événements disponibles &quot;out of the box&quot;
+      avec jQuery UI, c'est-à-dire qu'il n'a pas fallu écrire du code JavaScript
+      spécifique.
+    </p>
+    <p><strong>Trainer les pays dans le continent correspondant.</strong></p>
+    <div class="item amerique">Bolivie</div>
+    <div class="item afrique">Côte d'Ivoire</div>
+    <div class="item europe">Grèce</div>
+    <div class="item asie">Thailande</div>
+    <div class="item amerique">Canada</div>
+    <div class="item asie">Inde</div>
+    <div class="item oceanie">Nouvelle Zelande</div>
+    <div class="item afrique">Tanzanie</div>
+    <div class="item europe">Moldavie</div>
+    <div class="item oceanie">Australie</div>
+    <div class="clear"></div>
+    <div class="container afrique-container"><h2>Afrique</h2></div>
+    <div class="container amerique-container"><h2>Amérique</h2></div>
+    <div class="container asie-container"><h2>Asie</h2></div>
+    <div class="container europe-container"><h2>Europe</h2></div>
+    <div class="container oceanie-container"><h2>Oceanie</h2></div>
+    <div class="clear"></div>
+    <p>Voici le code pour cet exemple :</p>
+    <pre>
+&lt;script&gt;
+$(&quot;.item&quot;).draggable({
+   revert: &quot;invalid&quot;,
+   cursor: &quot;move&quot;
+});</pre
+    >
+    <pre>
+$(&quot;.afrique-container&quot;).droppable({
+   accept: &quot;.afrique&quot;
+});
+$(&quot;.amerique-container&quot;).droppable({
+   accept: &quot;.amerique&quot;
+});
+$(&quot;.asie-container&quot;).droppable({
+   accept: &quot;.asie&quot;
+});
+$(&quot;.europe-container&quot;).droppable({
+   accept: &quot;.europe&quot;
+});
+$(&quot;.oceanie-container&quot;).droppable({
+   accept: &quot;.oceanie&quot;
+});
+&lt;/script&gt;</pre
+    >
+    <hr />
+    <p><a href="https://tecfa.unige.ch/perso/mafritz/">MAF</a> (29.11.2018)</p>
+    <!-- Les fichiers JavaScript dans l'ordre suivant -->
+    <script src="../assets/vendor/jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+      $(".item").draggable({
+        revert: "invalid",
+        cursor: "move"
+      });
+
+      $(".afrique-container").droppable({
+        accept: ".afrique"
+      });
+      $(".amerique-container").droppable({
+        accept: ".amerique"
+      });
+      $(".asie-container").droppable({
+        accept: ".asie"
+      });
+      $(".europe-container").droppable({
+        accept: ".europe"
+      });
+      $(".oceanie-container").droppable({
+        accept: ".oceanie"
+      });
+    </script>
+  </body>
+</html>

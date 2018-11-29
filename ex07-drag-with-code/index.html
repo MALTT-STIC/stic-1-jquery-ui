@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery Ui Exemple : drag avec code</title>
+    <!-- Le fichier CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/jquery-ui/jquery-ui.min.css"
+    />
+    <style>
+      #redBox {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #999;
+        background-color: #ff0000;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>jQuery UI - drag avec code</h1>
+    <p>
+      Dans cette exemple, les événements start et stop de la fonction
+      draggable() sont associés à une fonction qui change le texte dans le
+      paragraphe feedback.
+    </p>
+    <div id="redBox">Drag me!</div>
+    <p id="feedback"></p>
+    <p>Voici le code :</p>
+    <pre>
+&lt;script&gt;
+   $(&quot;#redBox&quot;).draggable({
+ start: function() {
+ $(&quot;#feedback&quot;).text(&quot;J'ai commencé le drag&quot;);
+ },
+ stop: function() {
+ $(&quot;#feedback&quot;).text(&quot;J'ai terminé le drag&quot;);
+ }
+ });
+ &lt;/script&gt;</pre
+    >
+    <hr />
+    <p><a href="https://tecfa.unige.ch/perso/mafritz/">MAF</a> (29.11.2018)</p>
+    <!-- Les fichiers JavaScript dans l'ordre suivant -->
+    <script src="../assets/vendor/jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+      $("#redBox").draggable({
+        start: function() {
+          $("#feedback").text("J'ai commencé le drag");
+        },
+        stop: function() {
+          $("#feedback").text("J'ai terminé le drag");
+        }
+      });
+    </script>
+  </body>
+</html>

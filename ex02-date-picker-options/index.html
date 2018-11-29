@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery Ui Exemple : datepicker format de la date changé</title>
+    <!-- Le fichier CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/jquery-ui/jquery-ui.min.css"
+    />
+  </head>
+
+  <body>
+    <h1>jQuery UI - datepicker avec format de la date</h1>
+    <p>
+      Voici un deuxième exemple : un champ de texte qui propose automatiquement
+      un calendrier superposé pour choisir une date, et cette date a un format
+      différent à celui utilisé par défaut. Cliquez à l'intérieur du champ de
+      texte pour faire apparaître le widget.
+    </p>
+
+    <p>Date <input type="text" id="mon-champ-date" /></p>
+    <p>
+      Contrairement à l'<a href="../ex01-date-picker/">exemple 1</a>, vous
+      pouvez noter que la date a un format de type jour-mois-année, comparé au
+      format mois/jour/année de l'exemple précédent. Pour obtenir ce résultat,
+      il suffit d'ajouter des options à l'intérieur de la fonction JavaScript :
+    </p>
+    <pre>&lt;script&gt;<br>$(&quot;#mon-champ-date&quot;).datepicker({<br>	dateFormat: &quot;dd-mm-yy&quot;	<br>});<br>&lt;/script&gt;</pre>
+    <hr />
+    <p><a href="https://tecfa.unige.ch/perso/mafritz/">MAF</a> (29.11.2018)</p>
+    <!-- Les fichiers JavaScript dans l'ordre suivant -->
+    <script src="../assets/vendor/jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+      $("#mon-champ-date").datepicker({
+        dateFormat: "dd-mm-yy"
+      });
+    </script>
+  </body>
+</html>

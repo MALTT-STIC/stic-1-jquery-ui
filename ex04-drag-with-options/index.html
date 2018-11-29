@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery Ui Exemple : élément &quot;draggable&quot;</title>
+    <!-- Le fichier CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/jquery-ui/jquery-ui.min.css"
+    />
+    <style>
+      #redBox {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #999;
+        background-color: #ff0000;
+        color: #fff;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>jQuery UI - élément &quot;draggable&quot; avec options</h1>
+    <p>
+      Contrairement à l'<a href="../ex03-drag-simple/">exemple précédent</a>,
+      cette fois-ci nous ajoutons certains options à la fonction draggable()
+      pour rendre l'interaction plus intéressante. Voici le résultat :
+    </p>
+    <div id="redBox">Drag me!</div>
+    <p>
+      Comme vous pouvez le noter, par rapport à la fonction de base, nous avons
+      ajouté trois comportements différents :
+    </p>
+    <ol>
+      <li>
+        Une fois qu'on clique sur le carré, le curseur de la souris change et
+        suggère que l'élément peut se déplacer. On utilise pour ça l'option
+        <em>cursor</em> avec la valeur &quot;move&quot; (cette option accepte
+        toutes les valeurs CSS valides pour déterminer la forme du curseur).
+      </li>
+      <li>
+        Le carré peut bouger exclusivement sur l'axe horizontal. On utile pour
+        ça l'option <em>axis</em> avec la valeur &quot;x&quot;.
+      </li>
+      <li>
+        Le carré ne peut pas sortir des limites du document. On utile pour ça
+        l'option <em>containment</em> avec la valeur &quot;body&quot;,
+        c'est-à-dire dans notre cas l'élément du DOM qui joue le rôle de
+        &quot;conteneur&quot;.
+      </li>
+    </ol>
+    <p>Voici le code complet de cet exemple :</p>
+    <pre>
+&lt;script&gt;
+$(&quot;#redBox&quot;).draggable({
+	cursor: &quot;move&quot;,
+	axis: &quot;x&quot;,
+	containment: &quot;body&quot;
+});
+&lt;/script&gt;</pre
+    >
+    <hr />
+    <p><a href="https://tecfa.unige.ch/perso/mafritz/">MAF</a> (29.11.2018)</p>
+    <!-- Les fichiers JavaScript dans l'ordre suivant -->
+    <script src="../assets/vendor/jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+      $("#redBox").draggable({
+        cursor: "move",
+        axis: "x",
+        containment: "body"
+      });
+    </script>
+  </body>
+</html>
