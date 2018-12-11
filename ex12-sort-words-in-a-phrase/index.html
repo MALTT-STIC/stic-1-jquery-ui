@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery UI basic setup</title>
+    <!-- Le fichier CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/jquery-ui/jquery-ui.min.css"
+    />
+    <style>
+      ul.sortable-list {
+        list-style: none;
+        margin: 25px 0px;
+        padding: 0px;
+      }
+
+      ul.sortable-list li {
+        display: inline;
+        margin-right: 15px;
+        border: 1px solid #999;
+        padding: 5px 10px;
+        background-color: #eaeaea;
+        font-size: 20px;
+      }
+
+      .error-message {
+        color: #f00;
+        font-weight: bold;
+      }
+
+      .correct-message {
+        color: #159f0b;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>jQuery UI - trier avec sortable() avec code supplémentaire</h1>
+    <p>
+      Voici un premier exemple qui consiste à mettre dans l'ordre des bouts
+      d'une phrase. En plus, cet exemple a du code jQuery qui détermine en temps
+      réel si l'ordre est correcte.
+    </p>
+    <p><strong>Traîner les mots pour les mettre dans le bon ordre.</strong></p>
+
+    <ul class="sortable-list">
+      <li>a</li>
+      <li>rouge.</li>
+      <li>une</li>
+      <li>mon</li>
+      <li>Ce</li>
+      <li>pomme</li>
+      <li>mangé</li>
+      <li>matin,</li>
+      <li>frère</li>
+    </ul>
+    <div id="feedback">
+      <span class="error-message">La phrase n'est pas encore correcte!</span>
+    </div>
+    <hr />
+    <p>
+      <a href="http://tecfaetu.unige.ch/perso/maltt/fritz0/">MAF</a>
+      (23.08.2014)
+    </p>
+    <!-- Les fichiers JavaScript dans l'ordre suivant -->
+    <script src="../assets/vendor/jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+      var phrase = "Ce matin, mon frère a mangé une pomme rouge."; //La phrase correcte
+      $(".sortable-list").sortable({
+        axis: "x",
+        cursor: "move",
+        placeholder: "ui-state-highlight",
+        //Exécuter à chaque changement
+        update: function() {
+          //À chaque changement, il faut faire un reset de la phrase composée
+          var currentPhrase = "";
+          //Concatenation du contenu des <li> auxquels on ajoute un espace à la fin.
+          $(".sortable-list li").each(function() {
+            currentPhrase += $(this).text() + " ";
+          });
+          //Contrôler si les deux phrases sont égales, la fonction trim() sert pour enlever le dernier espace ajouté dans le cycle.
+          if (phrase == currentPhrase.trim()) {
+            $("#feedback").html(
+              '<span class="correct-message">La phrase est correcte!</span>'
+            );
+            $(".sortable-list").sortable("option", "disabled", true);
+          }
+        }
+      });
+      $(".sortable-list").disableSelection();
+    </script>
+  </body>
+</html>

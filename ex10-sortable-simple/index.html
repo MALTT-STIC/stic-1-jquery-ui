@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery UI - classement avec sortable()</title>
+    <!-- Le fichier CSS -->
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/jquery-ui/jquery-ui.min.css"
+    />
+  </head>
+
+  <body>
+    <h1>jQuery UI - classement avec sortable()</h1>
+    <p>
+      Voici un premier exemple qui consiste à mettre dans l'ordre les chiffres
+      de 10 à 100
+    </p>
+    <p>
+      <strong>Traîner les chiffres pour les mettre dans le bon ordre.</strong>
+    </p>
+
+    <ul class="sortable-list">
+      <li>100</li>
+      <li>70</li>
+      <li>80</li>
+      <li>50</li>
+      <li>30</li>
+      <li>10</li>
+      <li>40</li>
+      <li>20</li>
+      <li>60</li>
+      <li>90</li>
+    </ul>
+    <hr />
+    <p>
+      <a href="http://tecfaetu.unige.ch/perso/maltt/fritz0/">MAF</a>
+      (23.08.2014)
+    </p>
+    <!-- Les fichiers JavaScript dans l'ordre suivant -->
+    <script src="../assets/vendor/jquery-ui/external/jquery/jquery.js"></script>
+    <script src="../assets/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script>
+      $(".sortable-list").sortable();
+    </script>
+  </body>
+</html>
